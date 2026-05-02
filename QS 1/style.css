@@ -1,0 +1,155 @@
+@import url('style.css');
+
+:root {
+  --ink: #1a1a2e;
+  --cream: #f5e7ce;
+  --gold: #c9a84c;
+  --rust: #c0392b;
+  --teal: #1a7a6e;
+  --slate: #4a5568;
+  --border: #ddd5c8;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--cream);
+  color: var(--ink);
+  min-height: 100vh;
+  padding: 40px 20px;
+}
+
+.page-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.page-header h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.8rem;
+  color: var(--ink);
+  letter-spacing: -1px;
+}
+
+.page-header p {
+  color: var(--slate);
+  font-weight: 300;
+  margin-top: 6px;
+  font-size: 1rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.gold-line {
+  width: 700px;
+  height: 5px;
+  background: var(--gold);
+  margin: 14px auto 0;
+}
+
+.table-wrapper {
+  max-width: 10000px;
+  margin: 0 auto;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(255, 255, 255, 0.6);
+  border: 5px solid var(--border);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: rgb(161, 205, 241);
+}
+
+thead tr {
+  background: var(--ink);
+  color: white;
+}
+
+thead th {
+  padding: 18px 14px;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  font-size: 0.85rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+thead th:first-child {
+  text-align: left;
+  padding-left: 24px;
+}
+
+tbody tr {
+  border-bottom: 1px solid var(--border);
+  transition: background 0.2s;
+}
+
+tbody tr:hover {
+  background: #ffffff;
+}
+
+tbody tr:last-child {
+  border-bottom: none;
+}
+
+tbody td {
+  padding: 16px 14px;
+  text-align: center;
+  font-size: 0.88rem;
+  font-weight: 400;
+  color: var(--slate);
+}
+
+tbody td:first-child {
+  text-align: left;
+  padding-left: 24px;
+  font-weight: 500;
+  color: var(--ink);
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+.subject {
+  display: inline-block;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.82rem;
+  font-weight: 500;
+}
+.math    { background: #e8f4f8; color: #1a6b8a; }
+.data-structures { background: #e8f4f8; color: #1a6b8a; }
+.web-development { background: #fef0e7; color: #c0511a; }
+.operating-systems-lab { background: #e8f5e9; color: #2e7d32; }
+.operating-systems { background: #e8f5e9; color: #2e7d32; }
+.break { background: #f3e5f5; color: #7b1fa2; }
+.object-oriented-programming-with-java { background: #e3f2fd; color: #1565c0; }
+.data-structures-lab { background: #e8f4f8; color: #1a6b8a; }
+.indian-constitution { background: #fff3e0; color: #ef6c00; }
+.nehi-jana-college { background: #fce4ec; color: #c2185b; }
+
+.legend {
+  max-width: 1000px;
+  margin: 28px auto 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  color: var(--slate);
+}
+
+.legend-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}

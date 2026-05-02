@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Frame Set</title>
+</head>
+<frameset rows="80px,*,40px">
+
+  <frame src="frame_header.html" name="headerFrame" scrolling="no" noresize>
+
+  <frameset cols="220px,*">
+    <frame src="frame_left.html"  name="leftFrame"  scrolling="auto">
+    <frame src="frame_right.html" name="rightFrame" scrolling="auto">
+  </frameset>
+
+  <frame src="frame_status.html" name="statusFrame" scrolling="no" noresize>
+
+</frameset>
+<noframes>
+  <p>Your browser does not support frames. Please upgrade to a modern browser.</p>
+</noframes>
+</html>

@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SuperMarket Express</title>
+  <style>
+    :root {
+      --bg: #f4f7ff;
+      --surface: #ffffff;
+      --primary: #3f51b5;
+      --primary-soft: #e8eaf6;
+      --accent: #ff7043;
+      --text: #1f2a44;
+      --muted: #6b7280;
+      --border: #dde3f2;
+      --shadow: 0 22px 50px rgba(63, 81, 181, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page {
+      width: min(1150px, 96%);
+      margin: 0 auto;
+      padding: 30px 0 50px;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #3f51b5 0%, #6f72dd 100%);
+      border-radius: 28px;
+      color: #fff;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 40px;
+      align-items: center;
+      padding: 50px;
+    }
+
+    .hero-title {
+      font-size: clamp(2.4rem, 4vw, 3.4rem);
+      font-weight: 800;
+      margin-bottom: 18px;
+      letter-spacing: -0.04em;
+    }
+
+    .hero-text {
+      font-size: 1.05rem;
+      max-width: 620px;
+      color: rgba(255,255,255,0.92);
+      margin-bottom: 28px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 28px;
+      border-radius: 999px;
+      font-weight: 700;
+      box-shadow: 0 14px 30px rgba(0,0,0,0.12);
+      transition: transform 0.25s ease, background 0.25s ease;
+    }
+
+    .button.button-primary {
+      background: #fff;
+      color: var(--primary);
+    }
+
+    .button.button-secondary {
+      background: rgba(255,255,255,0.18);
+      border: 1px solid rgba(255,255,255,0.28);
+      color: #fff;
+    }
+
+    .button:hover {
+      transform: translateY(-3px);
+    }
+
+    .hero-graphic {
+      position: relative;
+    }
+
+    .hero-graphic::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 28px;
+      background: radial-gradient(circle at top right, rgba(255,255,255,0.18), transparent 40%);
+      pointer-events: none;
+    }
+
+    .hero-image {
+      width: 100%;
+      border-radius: 24px;
+      box-shadow: 0 24px 45px rgba(0,0,0,0.15);
+    }
+
+    .section-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 18px;
+      color: var(--primary);
+    }
+
+    .section-intro {
+      color: var(--muted);
+      margin-bottom: 22px;
+      max-width: 760px;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+
+    .feature-card {
+      background: #fff;
+      border-radius: 22px;
+      padding: 26px;
+      border: 1px solid var(--border);
+      box-shadow: 0 16px 30px rgba(63, 81, 181, 0.08);
+    }
+
+    .feature-card h3 {
+      margin-bottom: 12px;
+      font-size: 1rem;
+      color: var(--text);
+    }
+
+    .feature-card p {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .offer-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+
+    .offer-banner {
+      background: linear-gradient(135deg, #ff7043, #ff8a65);
+      color: #fff;
+      border-radius: 28px;
+      padding: 36px;
+      display: grid;
+      gap: 18px;
+      box-shadow: 0 20px 40px rgba(255,112,67,0.2);
+    }
+
+    .offer-banner h2 {
+      font-size: clamp(2rem, 2.8vw, 2.6rem);
+      margin-bottom: 10px;
+    }
+
+    .offer-banner p {
+      max-width: 520px;
+      line-height: 1.8;
+    }
+
+    .product-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .product-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 18px 35px rgba(16, 24, 64, 0.08);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 24px 44px rgba(16, 24, 64, 0.12);
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .product-content {
+      padding: 20px;
+    }
+
+    .product-title {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .product-description {
+      color: var(--muted);
+      font-size: 0.94rem;
+      margin-bottom: 16px;
+      min-height: 68px;
+    }
+
+    .product-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .price {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .add-button {
+      padding: 10px 16px;
+      border-radius: 999px;
+      background: var(--accent);
+      color: #fff;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      transition: background 0.25s ease;
+    }
+
+    .add-button:hover {
+      background: #f4511e;
+    }
+
+    .newsletter {
+      background: #fff;
+      border-radius: 24px;
+      border: 1px solid var(--border);
+      padding: 34px;
+      display: grid;
+      gap: 18px;
+      box-shadow: 0 18px 35px rgba(16, 24, 64, 0.06);
+    }
+
+    .newsletter h3 {
+      font-size: 1.2rem;
+      color: var(--primary);
+    }
+
+    .newsletter form {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 14px;
+    }
+
+    .newsletter input {
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 16px 18px;
+      font-size: 0.95rem;
+      outline: none;
+    }
+
+    .newsletter button {
+      border: none;
+      background: var(--primary);
+      color: #fff;
+      padding: 16px 24px;
+      border-radius: 14px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .footer {
+      margin-top: 40px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 860px) {
+      .hero-inner,
+      .offer-grid,
+      .newsletter form {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        border-radius: 24px;
+      }
+
+      .hero-inner {
+        padding: 40px;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .page {
+        padding: 0 10px;
+      }
+
+      .hero-inner {
+        padding: 28px;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .button {
+        width: 100%;
+      }
+
+      .body {
+        padding: 0;
+      }
+
+      .feature-card,
+      .product-card,
+      .newsletter {
+        border-radius: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <section class="hero">
+      <div class="hero-inner">
+        <div>
+          <h1 class="hero-title">SuperMarket Express</h1>
+          <p class="hero-text">Shop fresh groceries, daily essentials, and tasty treats from one stylish online supermarket. Discover new offers, fast delivery, and everything your pantry needs.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#products">Shop Now</a>
+            <a class="button button-secondary" href="#offers">Today’s Offers</a>
+          </div>
+        </div>
+        <div class="hero-graphic">
+          <img class="hero-image" src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=900&q=80" alt="Supermarket groceries" />
+        </div>
+      </div>
+    </section>
+
+    <section class="features">
+      <div class="feature-card">
+        <h3>Fresh Produce</h3>
+        <p>Handpicked fruits and vegetables delivered fresh from the farm to your kitchen.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Pantry Essentials</h3>
+        <p>Stock up on rice, pasta, cooking oil, spices, and everything needed for daily meals.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Bakery & Snacks</h3>
+        <p>Enjoy fresh bread, cakes, cookies, and crunchy snacks for every craving.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Drinks & Dairy</h3>
+        <p>Choose from cold beverages, milk, cheese, and chilled favorites.</p>
+      </div>
+    </section>
+
+    <section class="offer-grid" id="offers">
+      <div class="offer-banner">
+        <h2>Big Savings on Weekly Essentials</h2>
+        <p>Explore our curated collection of budget-friendly supermarket items, from cereals and milk to snacks and household cleaners. Save more with exclusive deals today.</p>
+        <a class="button button-primary" href="#products">View Offers</a>
+      </div>
+      <div class="newsletter">
+        <h3>Stay Updated</h3>
+        <p>Subscribe to get alerts on new arrivals, discount codes, and seasonal supermarket offers.</p>
+        <form>
+          <input type="email" placeholder="Enter your email" aria-label="Email address" />
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-title">Popular Products</div>
+      <p class="section-intro">Browse our best-selling supermarket items that customers love for quality, freshness, and value.</p>
+      <div class="product-list" id="products">
+        <article class="product-card">
+          <img src="berries.jfif" alt="Fresh strawberries" />
+          <div class="product-content">
+            <div class="product-title">Fresh Strawberries</div>
+            <p class="product-description">Sweet, juicy strawberries perfect for breakfast bowls, desserts, and snacks.</p>
+            <div class="product-meta">
+              <span class="price">₹149 / 250g</span>
+              <button class="add-button">Add</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <img src="bread.jpg" alt="Bread loaf" />
+          <div class="product-content">
+            <div class="product-title">Bakery Bread</div>
+            <p class="product-description">Freshly baked bread loaf, soft inside and perfect for sandwiches or toast.</p>
+            <div class="product-meta">
+              <span class="price">₹59 / loaf</span>
+              <button class="add-button">Add</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <img src="milk.webp" alt="Milk bottle" />
+          <div class="product-content">
+            <div class="product-title">Pure Milk</div>
+            <p class="product-description">Farm-fresh milk with rich flavor and smooth texture for daily use.</p>
+            <div class="product-meta">
+              <span class="price">₹52 / litre</span>
+              <button class="add-button">Add</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <img src="veggie.webp" alt="Fresh vegetables" />
+          <div class="product-content">
+            <div class="product-title">Veggie Basket</div>
+            <p class="product-description">A colorful selection of seasonal vegetables ready for your curry, salad, or stir fry.</p>
+            <div class="product-meta">
+              <span class="price">₹179 / box</span>
+              <button class="add-button">Add</button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <footer class="footer">
+      © 2026 SuperMarket Express. Fresh groceries delivered with convenience.
+    </footer>
+  </div>
+</body>
+</html>
