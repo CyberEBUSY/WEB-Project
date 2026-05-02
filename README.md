@@ -1,15 +1,15 @@
 # WEB-Project
-<b> 🌐 Web Technologies PCA Lab Assignment </b> </br>
-<b> 👨‍💻 Author </b> </br>
+#🌐 Web Technologies PCA Lab Assignment </br>
+#👨‍💻 Author....</br>
 <b> Argha Karmakar </b> </br>
 <b> BCA (Bachelor of Computer Applications) – Semester 2 </b>  </br>
 <b> NSHM Knowledge Campus, Kolkata </b>
 </br>
-<b> 📘 Project Overview </b> </br>
+# 📘 Project Overview </br>
 This repository contains solutions to Web Technologies lab assignments using HTML and CSS.
 The goal of this project is to build fundamental web development skills by creating structured and styled webpages.
 </br>
-<b > 📂 Contents <b/> </br>
+# 📂 Contents.....</br>
 1️⃣ Class Time Table : </br>
 Created using HTML table tag
 Styled using External CSS
@@ -49,15 +49,24 @@ Designed a simple supermarket webpage
 Used Internal CSS for styling
 Demonstrates layout design and styling concepts
 </br>
-🛠️ Technologies Used : </br>
+# 🛠️ Technologies Used : </br>
 HTML5
 CSS3
 Inline CSS
 Internal CSS
 External CSS
 </br>
-🎯 Learning Outcomes : </br>
+#🎯 Learning Outcomes : </br>
 Understanding HTML structure and tags
 Applying CSS for styling web pages
 Creating layouts and navigation
 Building real-world basic web pages
+
+---
+
+#📃Develop the solution for the following in HTML & CSS -
+1. Create your class time table using table tag. Use External CSS to format your time table created.
+2. Design a Webpage for your college containing description of courses, department, faculties, library etc. using list tags, href tags, and anchor tags.
+3. Create web page using Frame with rows and columns where we will have header frame, left frame, right frame, and status bar frame. On clicking in the left frame, in formation should be displayed in right frame.
+4. Create your Resume/CV/Biodata using HTML, use text, link, size, color and lists. Use Inline CSS to format your Resume that you have created.
+5. Create a Web Page of a super market using html and internal CSS.
