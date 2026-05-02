@@ -1,6 +1,7 @@
 # WEB-Project
-#🌐 Web Technologies PCA Lab Assignment </br>
-#👨‍💻 Author....</br>
+
+# 🌐 Web Technologies PCA Lab Assignment</br>
+<b> 👨‍💻 Author....</b> </br>
 <b> Argha Karmakar </b> </br>
 <b> BCA (Bachelor of Computer Applications) – Semester 2 </b>  </br>
 <b> NSHM Knowledge Campus, Kolkata </b>
@@ -49,22 +50,28 @@ Designed a simple supermarket webpage
 Used Internal CSS for styling
 Demonstrates layout design and styling concepts
 </br>
+
+--- 
+
 # 🛠️ Technologies Used : </br>
-HTML5
-CSS3
-Inline CSS
-Internal CSS
-External CSS
+HTML5,
+CSS3,
+Inline CSS,
+Internal CSS,
+External CSS.
 </br>
-#🎯 Learning Outcomes : </br>
-Understanding HTML structure and tags
-Applying CSS for styling web pages
-Creating layouts and navigation
-Building real-world basic web pages
 
 ---
 
-#📃Develop the solution for the following in HTML & CSS -
+# 🎯Learning Outcomes : </br>
+Understanding HTML structure and tags,
+Applying CSS for styling web pages,
+Creating layouts and navigation,
+Building real-world basic web pages.
+
+---
+
+# 📃Develop the solution for the following in HTML & CSS :
 1. Create your class time table using table tag. Use External CSS to format your time table created.
 2. Design a Webpage for your college containing description of courses, department, faculties, library etc. using list tags, href tags, and anchor tags.
 3. Create web page using Frame with rows and columns where we will have header frame, left frame, right frame, and status bar frame. On clicking in the left frame, in formation should be displayed in right frame.
